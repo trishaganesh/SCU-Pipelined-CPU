@@ -12,6 +12,7 @@ The CPU supports:
 
 Branch instructions use Zero (Z) and Negative (N) flags from the previous ALU operation to determine conditional execution.
 
+## Components
 ### #1: 1-D Median Stencil Assembly Program
 Description:
 This SCU ISA assembly program implements a 1-D median stencil for an input array a and output array b of size n. 
