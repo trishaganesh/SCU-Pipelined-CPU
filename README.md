@@ -1,7 +1,10 @@
 # SCU-Pipelined-CPU
-
 This project involves the design, implementation, and verification of a 32-bit, 5-stage pipelined CPU using Verilog, based on the SCU Instruction Set Architecture. 
 
+## Authors
+Andrew Vattuone, Nico Villegas-Kirchman, Trisha Ganesh
+
+## Description
 The CPU supports:
 - 11 base instructions (NOP, SVPC, LD, ST, ADD, INC, NEG, SUB, J, BRZ, BRN)
 - a 64×32-bit register file
