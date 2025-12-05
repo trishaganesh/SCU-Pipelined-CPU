@@ -19,3 +19,6 @@ For each element b[i] (1 ≤ i ≤ n-2), the program computes the median of thre
 Boundary elements are handled separately:
 - b[0] = a[0]
 - b[n-1] = a[n-1]
+
+
+### #2: Datapath and Control Design
