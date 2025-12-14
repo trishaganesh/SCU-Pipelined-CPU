@@ -52,9 +52,9 @@ Because this datapath is pipelined, all instructions will take only 1 cycle to c
 
 | Value of Input Size n  |                      CPI                                                                                                                |
 |     :---:              |                            :---:                                                                                                        |
-|       n &lt;= 0        |                       (15 + 4 cycles)/15 instructions = 19 cycles/15 instructions = 1.266667 CPI                                        |
-|        n = 1           |                       (25 + 4 cycles)/25 instructions = 29 cycles/25 instructions = 1.16 CPI                                            |
-|        n = 2           |                       (42 + 4 cycles)/42 instructions = 46 cycles/42 instructions = 1.095238 CPI                                        |
+|       n &lt;= 0        |                       (15 + 4 cycles) / 15 instructions = 19 cycles / 15 instructions = 1.266667 CPI                                        |
+|        n = 1           |                       (25 + 4 cycles) / 25 instructions = 29 cycles / 25 instructions = 1.16 CPI                                            |
+|        n = 2           |                       (42 + 4 cycles) / 42 instructions = 46 cycles / 42 instructions = 1.095238 CPI                                        |
 |        n > 2           |Max CPI = (40n - 36 + 4 cycles) / (40n - 36 instructions) = (40n - 32 cycles) / (40n - 36 instructions) = (40n - 32) / (40n - 36) CPI <br /> Min CPI = (37n - 30 + 4 cycles) / (37n - 30 instructions) = (37n - 26 cycles) / (37n - 30 instructions) = (37n - 26) / (37n - 30) CPI <br /> Therefore: (37n - 26) / (37n - 30) CPI <= Actual CPI <= (40n - 32) / (40n - 36) CPI                                                      |
 
 To test if these CPIs are correct, we can use waveforms just like we proposed for the instruction counts. We will verify the correctness of both the instruction counts and the CPIs with waveforms below. In all cases, the start time is at 0ns and the clock rate is 10ns, as it flips its value every 5ns. The waveform below proves both of these facts. We will use these values for all 4 cases (n = 0, n = 1, n = 2, n > 2), and the input array a will be the same default array of [3,1,5,7,2,9,8] starting at address 2 while b will start at address 71.
