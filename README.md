@@ -39,7 +39,7 @@ The table below summarizes all the different possible instruction counts based o
 
 | Value of Input Size n  |                      Instruction Count                            |
 |     :---:              |                            :---:                                  |
-|       n <= 0           |                       15 Instructions                             |
+|       n &lt;= 0        |                       15 Instructions                             |
 |        n = 1           |                       25 Instructions                             |
 |        n = 2           |                       42 Instructions                             |
 |        n > 2           | 37n - 30 Instructions  Total Instructions  40n - 36 Instructions  |
@@ -49,6 +49,18 @@ The table below summarizes all the different possible instruction counts based o
 Counting the total number of instructions yields 15, 25, and 42 for n = 0, n = 1, and n = 2, respectively. To verify this is true, we can use a waveform to determine the time each program finishes reading the final instruction and then use the clock cycle of 10ns to determine the total number of instructions read and thus verify if our values are correct or not. We will do this in the next section after describing the CPI equations. 
 
 Because this datapath is pipelined, all instructions will take only 1 cycle to complete, except for the very last instruction (the NEG instruction), which will take 5 cycles to complete. Therefore, to calculate the total number of cycles it takes for a particular program to complete based on input size n, just add 4 (5 cycles for NEG - 1 cycle for original NEG = 4 cycles). To calculate the CPI, all we need to do is take the total number of cycles and divide it by the total number of instructions executed in the program. The table below shows this for all possible values of the input size n:
+
+| Value of Input Size n  |                      CPI                                                                                                                |
+|     :---:              |                            :---:                                                                                                        |
+|       n &lt;= 0        |                       (15 + 4 cycles)/15 instructions = 19 cycles/15 instructions = 1.266667 CPI                                        |
+|        n = 1           |                       (25 + 4 cycles)/25 instructions = 29 cycles/25 instructions = 1.16 CPI                                            |
+|        n = 2           |                       (42 + 4 cycles)/42 instructions = 46 cycles/42 instructions = 1.095238 CPI                                        |
+|                        |                                                                                                                                         |
+|        n > 2           |  Max CPI = (40n - 36 + 4 cycles) / (40n - 36 instructions) = (40n - 32 cycles) / (40n - 36 instructions) = (40n - 32) / (40n - 36) CPI  |
+                            Min CPI = (37n - 30 + 4 cycles) / (37n - 30 instructions) = (37n - 26 cycles) / (37n - 30 instructions) = (37n - 26) / (37n - 30) CPI  |
+                            Therefore: (37n - 26) / (37n - 30) CPI &lt;= Actual CPI &lt;= (40n - 32) / (40n - 36) CPI  
+
+                                  
 
 
 
