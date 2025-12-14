@@ -19,12 +19,6 @@ The datapath includes the register file, ALU, multiplexers for operand selection
 
 ## Components
 ### #1: 1-D Median Stencil Assembly Program
-Description:
-This SCU ISA assembly program implements a 1-D median stencil for an input array a and output array b of size n. 
-For each element b[i] (1 ≤ i ≤ n-2), the program computes the median of three consecutive elements a[i-1], a[i], a[i+1]. 
-Boundary elements are handled separately:
-- b[0] = a[0]
-- b[n-1] = a[n-1]
-
+The 1-D median stencil assembly program serves as a benchmark to evaluate the correctness and performance of the 32-bit pipelined CPU. It processes an input array of 32-bit signed integers and computes the median of each interior element based on its neighbors, storing the results in an output array. The conditions are handled explicitly for the first and last elements, and ensure correctness for all array sizes. The program demonstrates the ability to execute the full SCU ISA, including the arithmetic operations ADD and SUB, the memory operations LD and ST, and the branch instructions BRN and BRZ, while correctly handling pipeline hazards through NOP insertion. The program includes comments and labels to provide readability, making the program both functional and a thorough demonstration of the CPU’s instruction flow, correct data handling, and hazard resolution. Note that at the very end we also included a NEG instruction since we’re required to demo it, although it doesn’t do anything for the 1-d stencil code itself.
 
 ### #2: Datapath and Control Design
