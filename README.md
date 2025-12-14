@@ -45,6 +45,7 @@ For any cases where n > 2, the first 28 instructions of the program will always 
 
 Counting the total number of instructions yields 15, 25, and 42 for n = 0, n = 1, and n = 2, respectively. To verify this is true, we can use a waveform to determine the time each program finishes reading the final instruction and then use the clock cycle of 10ns to determine the total number of instructions read and thus verify if our values are correct or not. We will do this in the next section after describing the CPI equations. 
 
+Because this datapath is pipelined, all instructions will take only 1 cycle to complete, except for the very last instruction (the NEG instruction), which will take 5 cycles to complete. Therefore, to calculate the total number of cycles it takes for a particular program to complete based on input size n, just add 4 (5 cycles for NEG - 1 cycle for original NEG = 4 cycles). To calculate the CPI, all we need to do is take the total number of cycles and divide it by the total number of instructions executed in the program. The table below shows this for all possible values of the input size n:
 
 
 
