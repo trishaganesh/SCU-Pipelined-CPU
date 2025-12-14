@@ -43,5 +43,10 @@ For any cases where n > 2, the first 28 instructions of the program will always 
 |        n = 2           |                       42 Instructions                             |
 |        n > 2           | 37n - 30 Instructions  Total Instructions  40n - 36 Instructions  |
 
+Counting the total number of instructions yields 15, 25, and 42 for n = 0, n = 1, and n = 2, respectively. To verify this is true, we can use a waveform to determine the time each program finishes reading the final instruction and then use the clock cycle of 10ns to determine the total number of instructions read and thus verify if our values are correct or not. We will do this in the next section after describing the CPI equations. 
+
+
+
+
 
 
