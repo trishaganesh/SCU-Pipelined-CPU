@@ -55,9 +55,9 @@ Because this datapath is pipelined, all instructions will take only 1 cycle to c
 |       n &lt;= 0        |                       (15 + 4 cycles)/15 instructions = 19 cycles/15 instructions = 1.266667 CPI                                        |
 |        n = 1           |                       (25 + 4 cycles)/25 instructions = 29 cycles/25 instructions = 1.16 CPI                                            |
 |        n = 2           |                       (42 + 4 cycles)/42 instructions = 46 cycles/42 instructions = 1.095238 CPI                                        |
-|        n > 2           |Max CPI = (40n - 36 + 4 cycles) / (40n - 36 instructions) = (40n - 32 cycles) / (40n - 36 instructions) = (40n - 32) / (40n - 36) CPI <br /> |
-|                        |Min CPI = (37n - 30 + 4 cycles) / (37n - 30 instructions) = (37n - 26 cycles) / (37n - 30 instructions) = (37n - 26) / (37n - 30) CPI <br /> |
-|                        |Therefore: (37n - 26) / (37n - 30) CPI <= Actual CPI <= (40n - 32) / (40n - 36) CPI                                                      |
+|        n > 2           |Max CPI = (40n - 36 + 4 cycles) / (40n - 36 instructions) = (40n - 32 cycles) / (40n - 36 instructions) = (40n - 32) / (40n - 36) CPI <br /> 
+                          Min CPI = (37n - 30 + 4 cycles) / (37n - 30 instructions) = (37n - 26 cycles) / (37n - 30 instructions) = (37n - 26) / (37n - 30) CPI <br /> 
+                          Therefore: (37n - 26) / (37n - 30) CPI <= Actual CPI <= (40n - 32) / (40n - 36) CPI                                                      |
 
                                   
 
