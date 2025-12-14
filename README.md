@@ -38,7 +38,9 @@ For any cases where n > 2, the first 28 instructions of the program will always 
 
 | Value of Input Size n  |                      Instruction Count                            |
 | ---------------------  | ----------------------------------------------------------------- |
-|        n <= 0          |                       15 Instructions                             |
+|   Center-aligned  
+        :---:
+        n <= 0           |                       15 Instructions                             |
 |        n = 1           |                       25 Instructions                             |
 |        n = 2           |                       42 Instructions                             |
 |        n > 2           | 37n - 30 Instructions  Total Instructions  40n - 36 Instructions  |
