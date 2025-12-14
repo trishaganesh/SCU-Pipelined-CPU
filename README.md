@@ -5,6 +5,9 @@ This project involves the design, implementation, and verification of a 32-bit, 
 Andrew Vattuone, Nico Villegas-Kirchman, Trisha Ganesh
 
 ## Description
+
+Modern processors rely on instruction pipelining to achieve high throughput, allowing multiple instructions to occupy execution stages simultaneously. A Verilog implementation of a 32-bit pipelined processor was designed to support the SCU Instruction Set Architecture (ISA), including 64 general purpose registers, five pipeline stages (IF, ID, EX, MEM, WB), and a word-addressed memory model.  The design included the construction of the datapath and control logic that provide support for 11 core  instructions: NOP, SVPC, LD, ST, ADD, INC, NEG, SUB, J, BRZ, and BRN, along with branch logic handling and to ensure correct execution. To evaluate correctness and performance, a benchmark program was developed to compute a one-dimensional median stencil over an array of 32-bit signed Integers. The final waveform simulation confirmed instruction flow, hazard resolution, and correctness of results. Together,  these components help us understand how a pipelined processor executes instructions efficiently and correctly.                                          
+
 The CPU supports:
 - 11 base instructions (NOP, SVPC, LD, ST, ADD, INC, NEG, SUB, J, BRZ, BRN)
 - a 64×32-bit register file
