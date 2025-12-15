@@ -75,6 +75,8 @@ Case 3 (n=2):
 For the cycle count for n = 2, the program finishes loading in its final value at 460ns. Therefore, the total number of clock cycles is 460ns / 10ns/cycle = 46 cycles. The CPI is therefore 46 cycles / 42 instructions = 1.095238 CPI, which is the exact value we calculated by hand earlier in the table. Note also that the program is behaving completely correct, with x35 being set to -x3 = -71 and b[0] = 3 and b[1] = 1 while all other values remain 0, which is expected when n = 2.
 
 
+Case 4 (n > 2):
+	For the case when n > 2, we will now use the full default array of [3,1,5,7,2,9,8], which we were already using for our earlier tests for n = 0, n = 1, and n = 2. However, since we’re using the full array, we’ll now set n = 7 and run the program for that. While the exact instruction and cycle count can’t be known just by knowing the value of n alone, we can calculate the range it’s guaranteed to fall under. The instruction count should be somewhere between 37*7 - 30 = 229 instructions and 40*7 - 36 = 244 instructions, while the CPI should be somewhere between (40*7 - 32) / (40*7 - 36) = 248/244 = 1.0165 and (37*7 - 26) / (37*7 - 30) = 233/229 = 1.0175 CPI. 
 
 
 
