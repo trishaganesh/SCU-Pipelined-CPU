@@ -91,6 +91,9 @@ n = 1: 29*2 = 58 ns
 n = 2: 46*2 = 92 ns
 n > 2: (37n-26)*2 < Execution Time < (40n-32)*2 = 74n-52 ns < Execution Time < 80n-64 ns
 
+### #5: Verification
+For verification, a testbench, exercising the 32-bit SCU pipelined CPU and its full instruction set was developed. Arithmetic operations (ADD, SUB, NEG, INC), memory operations (LD, ST), control flow (J, BRZ, BRN), and SVPC were included. The register and the data memory were initialized with representative values to test a variety of scenarios. The test bench runs the entire assembly program on the CPU, simulating all pipeline stages, and captures signals such as PC, instruction fetch, register reads/writes, ALU results, and control signals across the IF, ID, EX, MEM, and WB stages.
+
 
 
                                   
