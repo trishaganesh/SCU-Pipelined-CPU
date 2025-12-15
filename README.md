@@ -82,6 +82,7 @@ Because in our particular case we know the values of the array ahead of time, we
 
 Now we’ll test the actual values using the waveforms. For the instruction count, the final instruction is read at 2380ns. Since each instruction takes 10ns to read, this means that the total number of instructions executed is 2380ns / 10ns/instruction = 238 instructions, which is the exact value we calculated by hand above, proving both our by-hand instruction count calculation to be correct and our instruction count range to be correct since 229 < 238 < 244. 
 
+For the cycle count, the program finally finishes executing its last instruction by setting x35 = -71 at 2420ns. The total number of clock cycles is therefore 2420ns / 10ns/cycle = 242 cycles, which is the exact value we calculated by hand above. Therefore, the CPI must be 242 cycles / 238 instructions = 1.0168 CPI, and since 1.0165 < 1.0168 < 1.0175, this proves that our CPI estimation range is correct, both through our by-hand calculation and through the waveform.
 
 
 
