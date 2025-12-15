@@ -94,6 +94,9 @@ n > 2: (37n-26)*2 < Execution Time < (40n-32)*2 = 74n-52 ns < Execution Time < 8
 ### #5: Verification
 For verification, a testbench, exercising the 32-bit SCU pipelined CPU and its full instruction set was developed. Arithmetic operations (ADD, SUB, NEG, INC), memory operations (LD, ST), control flow (J, BRZ, BRN), and SVPC were included. The register and the data memory were initialized with representative values to test a variety of scenarios. The test bench runs the entire assembly program on the CPU, simulating all pipeline stages, and captures signals such as PC, instruction fetch, register reads/writes, ALU results, and control signals across the IF, ID, EX, MEM, and WB stages.
 
+The waveforms were examined to verify correct execution of each instruction and proper propagation of the control signals through pipeline registers. There were specific cases that were tested: arrays of length n=0, ensuring that the program exits without any error, n=1 (which verifies b[0]=a[0]), and n=2 which checks the correct handling of the loop b[n-1]=a[n-1]. In addition, branch instructions (BRZ/BRN) were tested for cases, confirming correct use of the Z and N flags from the previous instruction. Both load and store instructions were verified by initializing memory and observing correct read and write values. Furthermore, jump instructions and SVPC operations were confirmed to correctly update the program counter. The resulting waveform shows that all instructions produce the expected results, control signals activate at the current stages, hazards are properly managed, and the cases behave as intended, all of which provide full verification of the CPU functionality. 
+
+
 
 
                                   
