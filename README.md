@@ -80,6 +80,9 @@ Case 4 (n > 2):
 
 Because in our particular case we know the values of the array ahead of time, we can manually calculate the number of instructions. Note that this cannot be done in cases where we do not know the exact values of a beforehand. By carefully tracing through every individual instruction, we can determine the total instruction count to be 28 + (20 + (4 + 3 + 3 + 3) + 7) + (20 + (3 + 3 + 3 + 1) + 7) + (20 + (3 + 4 + 3) + 7) + (20 + (4 + 3 + 3 + 3) + 7) + (20 + (3 + 3 + 4 + 3) + 8) + 14 + 1 = 238 instructions, and since 229 < 238 < 244, this means that our instruction count range estimate is correct. There will be 4 more cycles following the final instruction, for a total of 238 + 4 = 242 cycles, and since 233 < 244 < 248, our cycle range is also therefore correct. The CPI is equal to 242 cycles / 238 instructions = 1.0168 CPI, and since 1.0165 < 1.0168 < 1.0175, this proves that our CPI estimation range is correct according to our by-hand calculation.
 
+Now we’ll test the actual values using the waveforms. For the instruction count, the final instruction is read at 2380ns. Since each instruction takes 10ns to read, this means that the total number of instructions executed is 2380ns / 10ns/instruction = 238 instructions, which is the exact value we calculated by hand above, proving both our by-hand instruction count calculation to be correct and our instruction count range to be correct since 229 < 238 < 244. 
+
+
 
 
 
