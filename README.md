@@ -72,7 +72,7 @@ For the cycle count when n = 1, the program finally finishes loading in all its 
 Case 3 (n=2):
 	For the instruction count for n = 2, the program finishes reading the final instruction at 420ns, as seen in the waveform below. Since it takes 10ns to reach each instruction, the total number of instructions executed is equal to 420ns / 10ns/instruction = 42 instructions, which is exactly what we calculated by hand in the table for n = 2. 
 
-	For the cycle count for n = 2, the program finishes loading in its final value at 460ns. Therefore, the total number of clock cycles is 460ns / 10ns/cycle = 46 cycles. The CPI is therefore 46 cycles / 42 instructions = 1.095238 CPI, which is the exact value we calculated by hand earlier in the table. Note also that the program is behaving completely correct, with x35 being set to -x3 = -71 and b[0] = 3 and b[1] = 1 while all other values remain 0, which is expected when n = 2.
+For the cycle count for n = 2, the program finishes loading in its final value at 460ns. Therefore, the total number of clock cycles is 460ns / 10ns/cycle = 46 cycles. The CPI is therefore 46 cycles / 42 instructions = 1.095238 CPI, which is the exact value we calculated by hand earlier in the table. Note also that the program is behaving completely correct, with x35 being set to -x3 = -71 and b[0] = 3 and b[1] = 1 while all other values remain 0, which is expected when n = 2.
 
 
 
