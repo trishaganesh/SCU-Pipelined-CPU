@@ -1,4 +1,4 @@
-# SCU-Pipelined-CPU
+# SCU Pipelined CPU
 This project involves the design, implementation, and verification of a 32-bit, 5-stage pipelined CPU using Verilog, based on the SCU Instruction Set Architecture. 
 
 ## Authors
