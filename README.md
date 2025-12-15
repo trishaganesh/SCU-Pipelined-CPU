@@ -62,6 +62,8 @@ To test if these CPIs are correct, we can use waveforms just like we proposed fo
 Case 1 (n = 0):
 For the instruction count of n = 0, the program finishes reading its final instruction (instruction 111) at 150ns (note that the program still needs a few cycles to fully finish everything, but we’ll save that for the CPI section), indicating that the execution time is  150ns. And since the clock flips every 5ns, this means that one full clock cycle takes 10ns, so it takes 10ns to read one instruction. Therefore, the total number of instructions executed is equal to 150ns / 10ns = 15, which is the same as the number of instructions we manually counted earlier. 
 
+For the cycle count of n = 0, the waveform below shows that the program finally finishes the execution its final instruction when it loads in -71 into x35 at 190ns (note that technically this occurs 5ns earlier because functional units update on posedge while buffers update on negedge, but the cycle isn’t complete until it finishes the last 5ns so we need to wait 5ns before the 10ns cycle is truly over). Therefore, the total number of clock cycles is 190ns / 10ns/clock cycle = 19 clock cycles, which is what we calculated earlier by hand. Using the observed number of clock cycles and number of instructions, we can calculate the CPI as 19 cycles / 15 instructions = 1.266667 CPI, which is exactly the same as our earlier theoretical calculated version. Note also that the program is behaving completely correctly, with x35 being set to -x3 = -71 and all of the values of b (note that it starts at memory location 71) remaining 0 since n = 0. 
+
 
 
                                   
