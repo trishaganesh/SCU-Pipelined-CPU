@@ -135,6 +135,9 @@ The below waveform is for the same above array except testing when n = -1. It sh
 
 <img width="477" height="280" alt="Screen Shot 2025-12-22 at 3 26 34 PM" src="https://github.com/user-attachments/assets/d4570a03-7821-4fdb-ae55-1abc7d2c1f6b" />
 
+For cases when n = 0, n = 1, n = 2, see the earlier waveforms in the CPI sections. We noted that for all cases, the output behaves exactly as expected.
+
+
 
                                   
 
