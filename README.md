@@ -96,8 +96,11 @@ For the cycle count when n = 1, the program finally finishes loading in all its 
 Case 3 (n=2):
 	For the instruction count for n = 2, the program finishes reading the final instruction at 420ns, as seen in the waveform below. Since it takes 10ns to reach each instruction, the total number of instructions executed is equal to 420ns / 10ns/instruction = 42 instructions, which is exactly what we calculated by hand in the table for n = 2. 
 
+<img width="478" height="216" alt="Screen Shot 2025-12-22 at 3 22 40 PM" src="https://github.com/user-attachments/assets/dff20782-006c-4ce6-808f-f701810979df" />
+
 For the cycle count for n = 2, the program finishes loading in its final value at 460ns. Therefore, the total number of clock cycles is 460ns / 10ns/cycle = 46 cycles. The CPI is therefore 46 cycles / 42 instructions = 1.095238 CPI, which is the exact value we calculated by hand earlier in the table. Note also that the program is behaving completely correct, with x35 being set to -x3 = -71 and b[0] = 3 and b[1] = 1 while all other values remain 0, which is expected when n = 2.
 
+<img width="479" height="213" alt="Screen Shot 2025-12-22 at 3 22 52 PM" src="https://github.com/user-attachments/assets/2ae4cdfe-a2d6-4578-959e-7bc7e8b995ff" />
 
 Case 4 (n > 2):
 	For the case when n > 2, we will now use the full default array of [3,1,5,7,2,9,8], which we were already using for our earlier tests for n = 0, n = 1, and n = 2. However, since we’re using the full array, we’ll now set n = 7 and run the program for that. While the exact instruction and cycle count can’t be known just by knowing the value of n alone, we can calculate the range it’s guaranteed to fall under. The instruction count should be somewhere between 37*7 - 30 = 229 instructions and 40*7 - 36 = 244 instructions, while the CPI should be somewhere between (40*7 - 32) / (40*7 - 36) = 248/244 = 1.0165 and (37*7 - 26) / (37*7 - 30) = 233/229 = 1.0175 CPI. 
@@ -105,6 +108,8 @@ Case 4 (n > 2):
 Because in our particular case we know the values of the array ahead of time, we can manually calculate the number of instructions. Note that this cannot be done in cases where we do not know the exact values of a beforehand. By carefully tracing through every individual instruction, we can determine the total instruction count to be 28 + (20 + (4 + 3 + 3 + 3) + 7) + (20 + (3 + 3 + 3 + 1) + 7) + (20 + (3 + 4 + 3) + 7) + (20 + (4 + 3 + 3 + 3) + 7) + (20 + (3 + 3 + 4 + 3) + 8) + 14 + 1 = 238 instructions, and since 229 < 238 < 244, this means that our instruction count range estimate is correct. There will be 4 more cycles following the final instruction, for a total of 238 + 4 = 242 cycles, and since 233 < 244 < 248, our cycle range is also therefore correct. The CPI is equal to 242 cycles / 238 instructions = 1.0168 CPI, and since 1.0165 < 1.0168 < 1.0175, this proves that our CPI estimation range is correct according to our by-hand calculation.
 
 Now we’ll test the actual values using the waveforms. For the instruction count, the final instruction is read at 2380ns. Since each instruction takes 10ns to read, this means that the total number of instructions executed is 2380ns / 10ns/instruction = 238 instructions, which is the exact value we calculated by hand above, proving both our by-hand instruction count calculation to be correct and our instruction count range to be correct since 229 < 238 < 244. 
+
+<img width="471" height="224" alt="Screen Shot 2025-12-22 at 3 23 38 PM" src="https://github.com/user-attachments/assets/57c59af3-ab6c-47a6-9d53-a7641dad4fd5" />
 
 For the cycle count, the program finally finishes executing its last instruction by setting x35 = -71 at 2420ns. The total number of clock cycles is therefore 2420ns / 10ns/cycle = 242 cycles, which is the exact value we calculated by hand above. Therefore, the CPI must be 242 cycles / 238 instructions = 1.0168 CPI, and since 1.0165 < 1.0168 < 1.0175, this proves that our CPI estimation range is correct, both through our by-hand calculation and through the waveform.
 
