@@ -72,7 +72,7 @@ To test if these CPIs are correct, we can use waveforms just like we proposed fo
 <img width="430" height="251" alt="Screen Shot 2025-12-22 at 3 17 01 PM" src="https://github.com/user-attachments/assets/5c63de11-1ee4-450a-bdfb-8ad49192b2b2" />
 
 
-Case 1 (n = 0):
+#### Case 1 (n = 0):
 For the instruction count of n = 0, the program finishes reading its final instruction (instruction 111) at 150ns (note that the program still needs a few cycles to fully finish everything, but we’ll save that for the CPI section), indicating that the execution time is  150ns. And since the clock flips every 5ns, this means that one full clock cycle takes 10ns, so it takes 10ns to read one instruction. Therefore, the total number of instructions executed is equal to 150ns / 10ns = 15, which is the same as the number of instructions we manually counted earlier. 
 
 <img width="482" height="225" alt="Screen Shot 2025-12-22 at 3 18 35 PM" src="https://github.com/user-attachments/assets/44a832c9-ba9f-4917-be8e-8ccaa295f2be" />
@@ -82,7 +82,7 @@ For the cycle count of n = 0, the waveform below shows that the program finally 
 
 <img width="483" height="212" alt="Screen Shot 2025-12-22 at 3 19 41 PM" src="https://github.com/user-attachments/assets/7efac06a-7f34-4edc-8457-046f76df0d0b" />
 
-Case 2 (n = 1):
+#### Case 2 (n = 1):
 For the instruction count of n = 1, the program finishes reading the final instruction at 250ns, as seen in the waveform below. Since it takes 10ns to read one instruction, the total number of instructions executed is therefore 250ns / 10ns/instruction = 25 instructions, which is exactly the same number of instructions we calculated earlier for n = 1.
 
 <img width="475" height="255" alt="Screen Shot 2025-12-22 at 3 20 53 PM" src="https://github.com/user-attachments/assets/12e3f877-5d48-4a62-ae33-617aa2c2d64d" />
