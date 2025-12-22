@@ -69,6 +69,9 @@ Because this datapath is pipelined, all instructions will take only 1 cycle to c
 
 To test if these CPIs are correct, we can use waveforms just like we proposed for the instruction counts. We will verify the correctness of both the instruction counts and the CPIs with waveforms below. In all cases, the start time is at 0ns and the clock rate is 10ns, as it flips its value every 5ns. The waveform below proves both of these facts. We will use these values for all 4 cases (n = 0, n = 1, n = 2, n > 2), and the input array a will be the same default array of [3,1,5,7,2,9,8] starting at address 2 while b will start at address 71.
 
+<img width="430" height="251" alt="Screen Shot 2025-12-22 at 3 17 01 PM" src="https://github.com/user-attachments/assets/5c63de11-1ee4-450a-bdfb-8ad49192b2b2" />
+
+
 Case 1 (n = 0):
 For the instruction count of n = 0, the program finishes reading its final instruction (instruction 111) at 150ns (note that the program still needs a few cycles to fully finish everything, but we’ll save that for the CPI section), indicating that the execution time is  150ns. And since the clock flips every 5ns, this means that one full clock cycle takes 10ns, so it takes 10ns to read one instruction. Therefore, the total number of instructions executed is equal to 150ns / 10ns = 15, which is the same as the number of instructions we manually counted earlier. 
 
