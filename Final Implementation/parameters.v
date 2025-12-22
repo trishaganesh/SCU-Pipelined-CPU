@@ -1,0 +1,11 @@
+`define OP_NOP  4'b0000
+`define OP_SVPC 4'b1111
+`define OP_LD   4'b1110
+`define OP_ST   4'b0011
+`define OP_ADD  4'b0100
+`define OP_INC  4'b0101
+`define OP_NEG  4'b0110
+`define OP_SUB  4'b0111
+`define OP_J    4'b1000
+`define OP_BRZ  4'b1001
+`define OP_BRN  4'b1010
