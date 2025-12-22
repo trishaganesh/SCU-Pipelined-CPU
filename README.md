@@ -131,6 +131,7 @@ The below waveform is for the default case, when a = [3,1,5,7,2,9,8], n = 7, &a 
 
 <img width="501" height="252" alt="Screen Shot 2025-12-22 at 3 25 14 PM" src="https://github.com/user-attachments/assets/a684b510-eacd-4940-9184-347d0cb1b382" />
 
+The below waveform is for the same above array except testing when n = -1. It shouldn’t change any of the values of b, and the waveform shows this, so it’s correct for this case.
 
 
 
