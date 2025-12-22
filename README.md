@@ -127,6 +127,10 @@ For verification, a testbench, exercising the 32-bit SCU pipelined CPU and its f
 
 The waveforms were examined to verify correct execution of each instruction and proper propagation of the control signals through pipeline registers. There were specific cases that were tested: arrays of length n=0, ensuring that the program exits without any error, n=1 (which verifies b[0]=a[0]), and n=2 which checks the correct handling of the loop b[n-1]=a[n-1]. In addition, branch instructions (BRZ/BRN) were tested for cases, confirming correct use of the Z and N flags from the previous instruction. Both load and store instructions were verified by initializing memory and observing correct read and write values. Furthermore, jump instructions and SVPC operations were confirmed to correctly update the program counter. The resulting waveform shows that all instructions produce the expected results, control signals activate at the current stages, hazards are properly managed, and the cases behave as intended, all of which provide full verification of the CPU functionality. 
 
+The below waveform is for the default case, when a = [3,1,5,7,2,9,8], n = 7, &a = 2, and &b = 71.
+
+<img width="501" height="252" alt="Screen Shot 2025-12-22 at 3 25 14 PM" src="https://github.com/user-attachments/assets/a684b510-eacd-4940-9184-347d0cb1b382" />
+
 
 
 
