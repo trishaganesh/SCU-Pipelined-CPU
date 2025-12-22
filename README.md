@@ -115,7 +115,7 @@ For the cycle count, the program finally finishes executing its last instruction
 
 <img width="475" height="213" alt="Screen Shot 2025-12-22 at 3 24 40 PM" src="https://github.com/user-attachments/assets/4f791a69-82f6-4893-b1dd-13ae79282cb5" />
 
-###### Results:
+##### Results:
 The total execution time for each case is as follows:
 n  = 0: 19*2 = 38 ns
 n = 1: 29*2 = 58 ns
