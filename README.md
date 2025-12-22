@@ -29,6 +29,7 @@ The datapath diagram utilizes a color-coded signal design to track when signals 
 
 ### #3: Control Truth Table
 SCU ISA Truth Table:
+
 <img width="899" height="246" alt="Screen Shot 2025-12-22 at 3 12 35 PM" src="https://github.com/user-attachments/assets/bf2794b2-1c54-4a3e-80fe-46341f4b2c77" />
 
 The control truth table defines the set of control signals for each of the 11 SCU ISA instructions, ensuring that the datapath components are correct during execution. Each row of the table maps an instruction opcode to its corresponding control outputs, memory access, register writes, and branch. A 0 means that the control will not be activated while a 1 means it will be activated. The values that contain Xs means that we do not care about the result. Whether that operation is activated or not, with an X there, it means it will have no effect on the result.
