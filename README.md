@@ -7,7 +7,6 @@ Andrew Vattuone, Nico Villegas-Kirchman, Trisha Ganesh
 ## Description
 
 Modern processors rely on instruction pipelining to achieve high throughput, allowing multiple instructions to occupy execution stages simultaneously. A Verilog implementation of a 32-bit pipelined processor was designed to support the SCU Instruction Set Architecture (ISA), including 64 general purpose registers, five pipeline stages (IF, ID, EX, MEM, WB), and a word-addressed memory model.  The design included the construction of the datapath and control logic that provide support for 11 core  instructions: NOP, SVPC, LD, ST, ADD, INC, NEG, SUB, J, BRZ, and BRN, along with branch logic handling and to ensure correct execution. To evaluate correctness and performance, a benchmark program was developed to compute a one-dimensional median stencil over an array of 32-bit signed Integers. The final waveform simulation confirmed instruction flow, hazard resolution, and correctness of results. Together,  these components help us understand how a pipelined processor executes instructions efficiently and correctly.                                          
-<img width="899" height="246" alt="Screen Shot 2025-12-22 at 3 12 35 PM" src="https://github.com/user-attachments/assets/bf2794b2-1c54-4a3e-80fe-46341f4b2c77" />
 
 The 32-bit pipelined CPU was designed to support the SCU Instruction Set Architecture (ISA), featuring  64 general-purpose registers (x0–x63), a word-addressed memory model, and five pipeline stages: Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write Back (WB). These five pipeline stages help increase instruction throughput by overlapping execution and by reducing the critical path for each stage. The CPU supports the execution of 11 core instructions: NOP, SVPC, LD, ST, ADD, INC, NEG, SUB, J, BRZ, and BRN, while handling branch logic and pipeline hazards to ensure proper execution. 
 
@@ -30,6 +29,7 @@ The datapath diagram utilizes a color-coded signal design to track when signals 
 
 ### #3: Control Truth Table
 SCU ISA Truth Table:
+<img width="899" height="246" alt="Screen Shot 2025-12-22 at 3 12 35 PM" src="https://github.com/user-attachments/assets/bf2794b2-1c54-4a3e-80fe-46341f4b2c77" />
 
 
 ### #4: Performance Analysis
