@@ -113,6 +113,8 @@ Now we’ll test the actual values using the waveforms. For the instruction coun
 
 For the cycle count, the program finally finishes executing its last instruction by setting x35 = -71 at 2420ns. The total number of clock cycles is therefore 2420ns / 10ns/cycle = 242 cycles, which is the exact value we calculated by hand above. Therefore, the CPI must be 242 cycles / 238 instructions = 1.0168 CPI, and since 1.0165 < 1.0168 < 1.0175, this proves that our CPI estimation range is correct, both through our by-hand calculation and through the waveform.
 
+<img width="475" height="213" alt="Screen Shot 2025-12-22 at 3 24 40 PM" src="https://github.com/user-attachments/assets/4f791a69-82f6-4893-b1dd-13ae79282cb5" />
+
 Results:
 The total execution time for each case is as follows:
 n  = 0: 19*2 = 38 ns
